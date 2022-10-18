@@ -1,40 +1,32 @@
 package com.xdr.libimgur
 
-import com.xdr.libimgur.apis.ImgurService
+import com.xdr.libimgur.apis.ImgurClient
+import com.xdr.libimgur.params.Section
 import junit.framework.Assert.assertNotNull
-import okhttp3.OkHttpClient
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ImgurServiceTests {
 
-    private val client = OkHttpClient.Builder()
-        .addInterceptor{
-            val request =  it.request().newBuilder()
-                .addHeader("Authorization", "Client-ID b994fc7c4ed91f1")
-                .build()
-            it.proceed(request)
-        }
-        .build()
-
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://api.imgur.com/3/")
-        .client(client)
-        .addConverterFactory(MoshiConverterFactory.create())
-        .build();                                                       // create retrofit instance
-    private val service = retrofit.create(ImgurService::class.java)     // create an implementation of API Endpoints
-
+    private val imgurService = ImgurClient.imgurService
 
     @Test
-    fun `get tags working` () {
-        val response = service.getTags().execute()
+    fun `get tags working`()  = runBlocking {
+        val response = imgurService.getTags()
         assertNotNull(response.body())
     }
 
     @Test
-    fun `get galleries working` () {
-        val response = service.getGallery().execute()
+    fun `get hot galleries working`()  = runBlocking{
+
+        val response = imgurService.getGallery(Section.HOT)
+        assertNotNull(response)
+    }
+
+    @Test
+    fun `get top galleries working`() = runBlocking{
+        val response = imgurService.getGallery(Section.TOP)
         assertNotNull(response.body())
     }
+
 }

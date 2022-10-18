@@ -31,7 +31,7 @@ data class TagsResponse(
             @Json(name = "name")
             val name: String,
             @Json(name = "topPost")
-            val topPost: TopPost
+            val topPost: TopPost?
         ) {
             @JsonClass(generateAdapter = true)
             data class TopPost(
@@ -46,11 +46,11 @@ data class TagsResponse(
                 @Json(name = "comment_count")
                 val commentCount: Int,
                 @Json(name = "cover")
-                val cover: String,
+                val cover: String?,
                 @Json(name = "cover_height")
-                val coverHeight: Int,
+                val coverHeight: Int?,
                 @Json(name = "cover_width")
-                val coverWidth: Int,
+                val coverWidth: Int?,
                 @Json(name = "datetime")
                 val datetime: Int,
                 @Json(name = "description")
@@ -63,30 +63,28 @@ data class TagsResponse(
                 val favoriteCount: Int,
                 @Json(name = "id")
                 val id: String,
-                @Json(name = "images")
-                val images: List<Image>,
+//                @Json(name = "images")
+//                val images: List<Image>?,
                 @Json(name = "images_count")
-                val imagesCount: Int,
+                val imagesCount: Int?,
                 @Json(name = "in_gallery")
                 val inGallery: Boolean,
                 @Json(name = "in_most_viral")
                 val inMostViral: Boolean,
                 @Json(name = "include_album_ads")
-                val includeAlbumAds: Boolean,
+                val includeAlbumAds: Boolean?,
                 @Json(name = "is_ad")
                 val isAd: Boolean,
                 @Json(name = "is_album")
                 val isAlbum: Boolean,
                 @Json(name = "layout")
-                val layout: String,
+                val layout: String?,
                 @Json(name = "link")
                 val link: String,
                 @Json(name = "nsfw")
                 val nsfw: Boolean,
                 @Json(name = "points")
                 val points: Int,
-                @Json(name = "privacy")
-                val privacy: String,
                 @Json(name = "score")
                 val score: Int,
                 @Json(name = "section")

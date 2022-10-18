@@ -3,14 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/customborder.xml" value="0.2725" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/empty.xml" value="0.2325" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.292" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_fire.xml" value="0.2675" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.292" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_trending.xml" value="0.2675" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_trending_arrow.xml" value="0.2675" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/image_border.xml" value="0.232" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto_light.xml" value="0.328125" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout-v31/feed_list_item.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/feed_fragment.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/feed_list_item.xml" value="0.36342592592592593" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/fragment_feed.xml" value="0.264" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/fragment_home.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.29791666666666666" />
       </map>
     </option>
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Downloads" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

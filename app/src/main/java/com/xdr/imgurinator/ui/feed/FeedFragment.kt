@@ -1,32 +1,42 @@
 package com.xdr.imgurinator.ui.feed
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.xdr.imgurinator.R
+import com.xdr.imgurinator.databinding.FragmentFeedBinding
 
 class FeedFragment : Fragment() {
+    private val viewModel: FeedViewModel by viewModels()
+    private lateinit var feedTitle : String
+    private val feedAdapter = FeedRecyclerAdapter()
 
-    companion object {
-        fun newInstance() = FeedFragment()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        feedTitle = arguments?.getString("feed_title").toString()   // TODO: Convert to Enum
+        viewModel.getFeed(feedTitle)
     }
-
-    private lateinit var viewModel: FeedViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.feed_fragment, container, false)
-    }
+        val binding = FragmentFeedBinding.inflate(inflater)
+        binding.apply {
+            feedRecyclerView.adapter = feedAdapter
+            feedRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(FeedViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        viewModel.feed.observe(viewLifecycleOwner) {
+            feedAdapter.submitList(it)
+        }
 
+        return binding.root
+    }
 }

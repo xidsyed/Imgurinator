@@ -12,11 +12,17 @@ java {
 
 // project dependencies
 dependencies {
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
     // moshi dependencies
     implementation 'com.squareup.moshi:moshi:1.14.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.14.0'
+
+    // coroutines core android
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    // HTTPLoggingInterceptor for Retrofit
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 
     //junit for testing
     testImplementation 'junit:junit:4.13.2'

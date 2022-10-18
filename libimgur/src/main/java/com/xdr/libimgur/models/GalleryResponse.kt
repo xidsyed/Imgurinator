@@ -83,8 +83,8 @@ data class GalleryResponse(
         val inMostViral: Boolean,
         @Json(name = "include_album_ads")
         val includeAlbumAds: Boolean?,
-        @Json(name = "images")
-        val images: List<Image>?,
+//        @Json(name = "images")
+//        val images: List<Image>?,
         @Json(name = "ad_config")
         val adConfig: AdConfig,
         @Json(name = "type")
