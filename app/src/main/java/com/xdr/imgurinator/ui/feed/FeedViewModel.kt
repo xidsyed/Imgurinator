@@ -8,14 +8,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xdr.imgurinator.repository.ImgurRepository
 import com.xdr.libimgur.models.GalleryResponse
+import com.xdr.libimgur.models.Image
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class FeedViewModel : ViewModel() {
     private val repo = ImgurRepository()
 
-    private val _feed = MutableLiveData<List<GalleryResponse.Data>>()
-    val feed: LiveData<List<GalleryResponse.Data>> get() = _feed
+    private val _feed = MutableLiveData<List<Image>>()
+    val feed: LiveData<List<Image>> get() = _feed
 
     fun getFeed(type: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -26,4 +27,5 @@ class FeedViewModel : ViewModel() {
             }
         }
     }
+
 }

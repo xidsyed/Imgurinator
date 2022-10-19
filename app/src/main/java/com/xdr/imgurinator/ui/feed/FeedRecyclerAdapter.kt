@@ -7,12 +7,14 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.size.Scale
+import com.xdr.imgurinator.R
 import com.xdr.imgurinator.databinding.FeedListItemBinding
 import com.xdr.libimgur.models.GalleryResponse
+import com.xdr.libimgur.models.Image
 
 // ListAdapter <T, VH>
 class FeedRecyclerAdapter() :
-    ListAdapter<GalleryResponse.Data, FeedRecyclerAdapter.FeedViewHolder>(FeedDiffCallback()) {
+    ListAdapter<Image, FeedRecyclerAdapter.FeedViewHolder>(FeedDiffCallback()) {
 
     // Inflates view and returns VH by passing it the binding of the inflated view
     override fun onCreateViewHolder(
@@ -27,26 +29,26 @@ class FeedRecyclerAdapter() :
     // Binds data to View
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
         val item = getItem(position)
-        val width = ""
         holder.binding.apply {
             imageCaption.text = item.title
             imageView
                 .load("https://i.imgur.com/${item.cover}.jpg") {
                     crossfade(true)
-
+                    
+                    error(R.drawable.ic_facepalm)
                 }
         }
     }
 
-    class FeedDiffCallback : DiffUtil.ItemCallback<GalleryResponse.Data>() {
+    class FeedDiffCallback : DiffUtil.ItemCallback<Image>() {
         override fun areItemsTheSame(
-            oldItem: GalleryResponse.Data,
-            newItem: GalleryResponse.Data
+            oldItem: Image,
+            newItem: Image
         ): Boolean = oldItem.id == newItem.id
 
         override fun areContentsTheSame(
-            oldItem: GalleryResponse.Data,
-            newItem: GalleryResponse.Data
+            oldItem: Image,
+            newItem: Image
         ): Boolean = oldItem == newItem
     }
 
