@@ -3,22 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable-v24/rounded_border.xml" value="0.2715" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/bottom_border.xml" value="0.3015" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/circular_border.xml" value="0.2415" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/customborder.xml" value="0.2725" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/downward_gradient.xml" value="0.2415" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/empty.xml" value="0.2325" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/gradient.xml" value="0.243" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.292" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_down_arrow.xml" value="0.2715" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_facepalm.xml" value="0.243" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_fire.xml" value="0.2675" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.292" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_trending.xml" value="0.2675" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_trending_arrow.xml" value="0.2675" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/image_border.xml" value="0.232" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/replies_pill_shape.xml" value="0.2715" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/upward_gradient.xml" value="0.259" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto.xml" value="0.2599401453612655" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto_light.xml" value="0.328125" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto_medium.xml" value="0.26934587430525864" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout-v31/feed_list_item.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_post.xml" value="0.49098712446351933" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_story.xml" value="0.264" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_comment_item.xml" value="0.4" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_feed_item.xml" value="0.23514322359982898" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_stories_item.xml" value="0.264" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_story_view.xml" value="0.2441214194100043" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/feed_fragment.xml" value="0.29791666666666666" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/feed_list_item.xml" value="0.36342592592592593" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/fragment_dashboard.xml" value="0.2441214194100043" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/fragment_feed.xml" value="0.264" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/fragment_home.xml" value="0.29791666666666666" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/post_item.xml" value="0.264" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/story_list_item.xml" value="0.6" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/menu/bottom_nav_menu.xml" value="0.29791666666666666" />
       </map>

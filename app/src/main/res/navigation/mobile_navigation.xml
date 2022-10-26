@@ -9,18 +9,34 @@
         android:id="@+id/navigation_hot"
         android:name="com.xdr.imgurinator.ui.feed.FeedFragment"
         android:label="@string/nav_title_hot"
-        tools:layout="@layout/fragment_feed" >
+        tools:layout="@layout/fragment_feed">
 
-        <argument app:argType="string" android:name="feed_title" android:defaultValue="hot"/>
+        <argument
+            android:name="feed_title"
+            android:defaultValue="hot"
+            app:argType="string" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_top"
         android:name="com.xdr.imgurinator.ui.feed.FeedFragment"
         android:label="@string/nav_title_top"
-        tools:layout="@layout/fragment_feed" >
+        tools:layout="@layout/fragment_feed">
 
-        <argument app:argType="string" android:name="feed_title" android:defaultValue="top"/>
+        <argument
+            android:name="feed_title"
+            android:defaultValue="top"
+            app:argType="string" />
     </fragment>
+    <activity
+        android:id="@+id/story_activity"
+        android:name="com.xdr.imgurinator.ui.stories.StoryActivity"
+        android:label="Stories"
+        tools:layout="@layout/activity_main">
 
+        <argument
+            android:name="tag"
+            app:argType="string" />
+
+    </activity>
 </navigation>

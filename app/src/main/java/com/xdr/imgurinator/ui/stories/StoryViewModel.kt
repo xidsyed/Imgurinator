@@ -5,17 +5,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xdr.imgurinator.repository.ImgurRepository
-import com.xdr.libimgur.models.Gallery
-import com.xdr.libimgur.models.Tag
+import com.xdr.libimgur.models.Image
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class StoriesViewModel : ViewModel() {
-    private val repo = ImgurRepository()
-    private val _tags = MutableLiveData<List<Tag>>()
-    val tags : LiveData<List<Tag>> get() = _tags
+class StoryViewModel : ViewModel() {
 
-    fun getStories() = viewModelScope.launch(Dispatchers.IO) {
-        _tags.postValue(repo.getTags())
+    private val repo = ImgurRepository()
+
+    private val _storiesList = MutableLiveData<List<Image>>()
+    val storiesList: LiveData<List<Image>> get() = _storiesList
+
+    fun getStories(tagName: String) = viewModelScope.launch(Dispatchers.IO) {
+        repo.getTagGallery(tagName)?.let { _storiesList.postValue(it) }
     }
+
 }

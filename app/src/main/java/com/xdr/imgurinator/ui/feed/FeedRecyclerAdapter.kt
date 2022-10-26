@@ -6,14 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.size.Scale
 import com.xdr.imgurinator.R
-import com.xdr.imgurinator.databinding.FeedListItemBinding
-import com.xdr.libimgur.models.GalleryResponse
+import com.xdr.imgurinator.databinding.AdapterFeedItemBinding
 import com.xdr.libimgur.models.Image
 
 // ListAdapter <T, VH>
-class FeedRecyclerAdapter() :
+class FeedRecyclerAdapter(private val listener : FeedListener) :
     ListAdapter<Image, FeedRecyclerAdapter.FeedViewHolder>(FeedDiffCallback()) {
 
     // Inflates view and returns VH by passing it the binding of the inflated view
@@ -22,7 +20,7 @@ class FeedRecyclerAdapter() :
         viewType: Int
     ): FeedViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = FeedListItemBinding.inflate(inflater, parent, false)
+        val binding = AdapterFeedItemBinding.inflate(inflater, parent, false)
         return FeedViewHolder(binding)
     }
 
@@ -32,11 +30,11 @@ class FeedRecyclerAdapter() :
         holder.binding.apply {
             imageCaption.text = item.title
             imageView
-                .load("https://i.imgur.com/${item.cover}.jpg") {
+                .load("https://i.imgur.com/${item.cover}l.jpg") {
                     crossfade(true)
-                    
                     error(R.drawable.ic_facepalm)
                 }
+            root.setOnClickListener { listener.itemClicked(item.id) }
         }
     }
 
@@ -52,6 +50,12 @@ class FeedRecyclerAdapter() :
         ): Boolean = oldItem == newItem
     }
 
-    class FeedViewHolder(val binding: FeedListItemBinding) :
+    class FeedViewHolder(val binding: AdapterFeedItemBinding) :
         RecyclerView.ViewHolder(binding.root)
+
 }
+
+interface FeedListener{
+    fun itemClicked(albumHash: String)
+}
+

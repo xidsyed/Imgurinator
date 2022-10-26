@@ -19,14 +19,33 @@ class ImgurServiceTests {
     @Test
     fun `get hot galleries working`()  = runBlocking{
 
-        val response = imgurService.getGallery(Section.HOT)
+        val response = imgurService.getGallerySection(Section.HOT)
         assertNotNull(response)
     }
 
     @Test
     fun `get top galleries working`() = runBlocking{
-        val response = imgurService.getGallery(Section.TOP)
+        val response = imgurService.getGallerySection(Section.TOP)
         assertNotNull(response.body())
     }
+
+    @Test
+    fun `get tag aww working`() = runBlocking{
+        val response = imgurService.getTagGallery("awww")
+        assertNotNull(response.body())
+    }
+
+    @Test
+    fun `get comments working`() = runBlocking{
+        val response = imgurService.getComments("lzvHpeU")
+        assertNotNull(response.body())
+    }
+
+    @Test
+    fun `get gallery image working`() = runBlocking{
+        val response = imgurService.getGalleryImage("lzvHpeU")
+        assertNotNull(response.body())
+    }
+
 
 }

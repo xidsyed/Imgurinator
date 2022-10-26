@@ -1,4 +1,4 @@
-package com.xdr.imgurinator.ui.stories
+package com.xdr.imgurinator.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,15 +6,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.xdr.imgurinator.databinding.StoryListItemBinding
+import com.xdr.imgurinator.databinding.AdapterStoriesItemBinding
 import com.xdr.libimgur.models.Tag
 
-class StoriesRecyclerAdapter() :
+class StoriesRecyclerAdapter(private val listener : StoryClickListener) :
     ListAdapter<Tag, StoriesRecyclerAdapter.StoryViewHolder>(StoriesDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoryViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = StoryListItemBinding.inflate(inflater, parent, false)
+        val binding = AdapterStoriesItemBinding.inflate(inflater, parent, false)
         return StoryViewHolder(binding)
     }
 
@@ -22,14 +22,17 @@ class StoriesRecyclerAdapter() :
         val tag = getItem(position)
         holder.binding.apply {
             storyCaption.text = tag.displayName
-            storyImage.load("https://i.imgur.com/${tag.backgroundHash}.jpg") {
+            storyImage.load("https://i.imgur.com/${tag.backgroundHash}s.jpg") {
                 crossfade(true)
+            }
+            root.setOnClickListener{
+                listener.onClick(tag.displayName!!, "https://i.imgur.com/${tag.backgroundHash}s.jpg")
             }
         }
     }
 
     class StoryViewHolder(
-        val binding: StoryListItemBinding
+        val binding: AdapterStoriesItemBinding
     ) : RecyclerView.ViewHolder(binding.root)
 
     class StoriesDiffCallback : DiffUtil.ItemCallback<Tag>() {
@@ -39,4 +42,9 @@ class StoriesRecyclerAdapter() :
         override fun areContentsTheSame(oldItem: Tag, newItem: Tag): Boolean = oldItem == newItem
 
     }
+
+    interface StoryClickListener {
+        fun onClick(tagName : String, imageUrl:String)
+    }
 }
+

@@ -1,8 +1,10 @@
-package com.xdr.libimgur.models
+package com.xdr.libimgur.models.response
 
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import com.xdr.libimgur.models.Gallery
+import com.xdr.libimgur.models.Tag
 
 @JsonClass(generateAdapter = true)
 data class TagsResponse(
@@ -16,7 +18,7 @@ data class TagsResponse(
     @JsonClass(generateAdapter = true)
     data class Data(
         @Json(name = "featured")
-        val featured: String,
+        val featured: String?,
         @Json(name = "galleries")
         val galleries: List<Gallery>,
         @Json(name = "tags")

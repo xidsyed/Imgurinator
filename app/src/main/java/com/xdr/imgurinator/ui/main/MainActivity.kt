@@ -1,25 +1,23 @@
-package com.xdr.imgurinator
+package com.xdr.imgurinator.ui.main
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.LinearLayout
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.xdr.imgurinator.R
 import com.xdr.imgurinator.databinding.ActivityMainBinding
-import com.xdr.imgurinator.ui.stories.StoriesRecyclerAdapter
-import com.xdr.imgurinator.ui.stories.StoriesViewModel
+import com.xdr.imgurinator.ui.feed.FeedRecyclerAdapter
+import com.xdr.imgurinator.ui.stories.StoryActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), StoriesRecyclerAdapter.StoryClickListener {
     private lateinit var binding: ActivityMainBinding
-    private val storiesViewModel: StoriesViewModel by viewModels()
-    private val storiesRecyclerAdapter = StoriesRecyclerAdapter()
+    private val mainActivityViewModel: MainActivityViewModel by viewModels()
+    private val storiesRecyclerAdapter = StoriesRecyclerAdapter(this)
     private var TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,9 +49,18 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        storiesViewModel.getStories()
-        storiesViewModel.tags.observe(this) {
+        mainActivityViewModel.getStories()
+        mainActivityViewModel.tags.observe(this) {
             storiesRecyclerAdapter.submitList(it)
         }
     }
+
+    override fun onClick(tagName: String, imageUrl : String) {
+        val intent = Intent (this, StoryActivity::class.java)
+        intent.putExtra("tag", tagName)
+        intent.putExtra("image_url", imageUrl)
+        startActivity(intent)
+    }
+
+
 }

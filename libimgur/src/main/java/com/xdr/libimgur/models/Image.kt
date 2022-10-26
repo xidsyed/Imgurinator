@@ -2,16 +2,18 @@ package com.xdr.libimgur.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import java.util.*
+
 @JsonClass(generateAdapter = true)
 data class Image(
     @Json(name = "id")
     val id: String,
     @Json(name = "title")
-    val title: String,
+    val title: String?,
     @Json(name = "description")
     val description: String?,
     @Json(name = "datetime")
-    val datetime: Int,
+    val datetime: Long,
     @Json(name = "cover")
     val cover: String?,
     @Json(name = "cover_width")
@@ -19,9 +21,9 @@ data class Image(
     @Json(name = "cover_height")
     val coverHeight: Int?,
     @Json(name = "account_url")
-    val accountUrl: String,
+    val accountUrl: String?,
     @Json(name = "account_id")
-    val accountId: Int,
+    val accountId: Int?,
     @Json(name = "privacy")
     val privacy: String?,
     @Json(name = "layout")
@@ -31,15 +33,15 @@ data class Image(
     @Json(name = "link")
     val link: String,
     @Json(name = "ups")
-    val ups: Int,
+    val ups: Int?,
     @Json(name = "downs")
-    val downs: Int,
+    val downs: Int?,
     @Json(name = "points")
-    val points: Int,
+    val points: Int?,
     @Json(name = "score")
-    val score: Int,
+    val score: Int?,
     @Json(name = "is_album")
-    val isAlbum: Boolean,
+    val isAlbum: Boolean?,
     @Json(name = "vote")
     val vote: Any?,
 //    @Json(name = "favorite")
@@ -47,29 +49,31 @@ data class Image(
 //    @Json(name = "nsfw")
 //    val nsfw: Boolean,
     @Json(name = "section")
-    val section: String,
+    val section: String?,
     @Json(name = "comment_count")
-    val commentCount: Int,
+    val commentCount: Int?,
     @Json(name = "favorite_count")
-    val favoriteCount: Int,
+    val favoriteCount: Int?,
     @Json(name = "topic")
     val topic: Any?,
     @Json(name = "topic_id")
     val topicId: Int?,
+    @Json(name="images")
+    val images: List<Image>?,
     @Json(name = "images_count")
     val imagesCount: Int?,
     @Json(name = "in_gallery")
-    val inGallery: Boolean,
+    val inGallery: Boolean?,
     @Json(name = "is_ad")
-    val isAd: Boolean,
+    val isAd: Boolean?,
     @Json(name = "tags")
-    val tags: List<Tag>,
+    val tags: List<Tag>?,
     @Json(name = "ad_type")
-    val adType: Int,
+    val adType: Int?,
     @Json(name = "ad_url")
-    val adUrl: String,
+    val adUrl: String?,
     @Json(name = "in_most_viral")
-    val inMostViral: Boolean,
+    val inMostViral: Boolean?,
     @Json(name = "include_album_ads")
     val includeAlbumAds: Boolean?,
 //    @Json(name = "ad_config")

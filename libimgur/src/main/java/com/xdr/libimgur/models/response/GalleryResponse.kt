@@ -1,8 +1,9 @@
-package com.xdr.libimgur.models
+package com.xdr.libimgur.models.response
 
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import com.xdr.libimgur.models.Image
 
 @JsonClass(generateAdapter = true)
 data class GalleryResponse(

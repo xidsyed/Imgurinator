@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:paddingBottom="12dp">
+
+    <TextView
+        android:id="@+id/author_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/accent"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Obito San" />
+
+    <TextView
+        android:id="@+id/comment_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/roboto_light"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/author_name_tv"
+        app:layout_constraintStart_toEndOf="@id/author_name_tv"
+        tools:text="3h" />
+
+    <TextView
+        android:id="@+id/comment_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="12dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/author_name_tv"
+        app:layout_constraintTop_toBottomOf="@id/author_name_tv"
+        tools:text="One must never abandon their friends, if one does, then he is certainly worse than scum, or so my master has said"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/replies_layout"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:background="@drawable/replies_pill_shape"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="2dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/comment_tv"
+        app:layout_constraintTop_toTopOf="@+id/author_name_tv"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/replies_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            tools:text="+3" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/child_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/left_border"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/comment_tv"
+        tools:layout_height="100dp"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

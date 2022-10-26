@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/post_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/post_title_image_card"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/black">
+
+        <ImageView
+            android:id="@+id/post_title_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:background="@drawable/sample_image_obito" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/post_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textAlignment="textStart"
+        android:textSize="17sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/post_title_image_card"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Abandon Scum? Something is Worse than Something Else Even Though  You May Not think That it might be" />
+
+    <TextView
+        android:id="@+id/post_author_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="250dp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/accent"
+        android:fontFamily="@font/roboto_light"
+        app:layout_constraintStart_toStartOf="@id/post_title_text_view"
+        app:layout_constraintTop_toBottomOf="@id/post_title_text_view"
+        tools:text="Obito San" />
+
+    <ImageView
+        android:id="@+id/post_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:clipToOutline="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/post_author_tv"
+
+        tools:src="@drawable/sample_image_obito" />
+
+    <ImageView
+        android:id="@+id/eye_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_eye_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/post_image_view" />
+
+    <TextView
+        android:id="@+id/view_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/roboto_medium"
+        app:layout_constraintBottom_toBottomOf="@id/eye_icon"
+        app:layout_constraintStart_toEndOf="@id/eye_icon"
+        app:layout_constraintTop_toTopOf="@id/eye_icon"
+        tools:text="69420 Views" />
+
+    <TextView
+        android:id="@+id/point_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/roboto_medium"
+        app:layout_constraintBottom_toBottomOf="@id/up_arrow"
+        app:layout_constraintEnd_toStartOf="@+id/up_arrow"
+        app:layout_constraintTop_toTopOf="@id/up_arrow"
+        tools:text="43,5608"
+        android:textColor="@color/accent_orange"/>
+
+    <ImageView
+        android:id="@+id/up_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_up_arrow"
+        app:layout_constraintEnd_toStartOf="@id/icon_share"
+        app:layout_constraintTop_toTopOf="@id/eye_icon" />
+
+    <ImageView
+        android:id="@+id/icon_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/up_arrow" />
+
+    <TextView
+        android:id="@+id/post_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toEndOf="@+id/post_author_tv"
+        app:layout_constraintTop_toTopOf="@+id/post_author_tv"
+        tools:text="3h" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

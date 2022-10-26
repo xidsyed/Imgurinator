@@ -1,13 +1,11 @@
 package com.xdr.imgurinator.ui.feed
 
 import android.util.Log
-import android.view.Display
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xdr.imgurinator.repository.ImgurRepository
-import com.xdr.libimgur.models.GalleryResponse
 import com.xdr.libimgur.models.Image
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
