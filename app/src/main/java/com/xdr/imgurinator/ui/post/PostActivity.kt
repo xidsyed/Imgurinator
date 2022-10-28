@@ -35,11 +35,11 @@ class PostActivity : AppCompatActivity() {
             binding.commentCountTv.text = String.format("%,d", item.commentCount)
             item.description?.let { binding.postDescriptionTv.text = it }
             binding.postItem.apply {
-                postImageView.load("https://i.imgur.com/${item.cover}l.jpg") {
+                postImageView.load("https://i.imgur.com/${item.cover}h.jpg") {
                     crossfade(true)
                     error(R.drawable.ic_facepalm)
                 }
-                postTitleImage.load("https://imgur.com/user/${item.accountUrl}/avatar?maxwidth=290")
+                postTitleImage.load("https://imgur.com/user/${item.accountUrl}/avatar")
                 postTitleTextView.text = item.title
                 pointCountTv.text = String.format("%,d", item.points)
                 postAuthorTv.text = item.accountUrl

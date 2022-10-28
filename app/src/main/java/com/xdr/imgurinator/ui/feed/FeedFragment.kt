@@ -18,10 +18,13 @@ class FeedFragment : Fragment(), FeedListener {
     private lateinit var feedTitle : String
     private val feedAdapter = FeedRecyclerAdapter(this)
 
+    private val TAG = "FeedFragment"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         feedTitle = arguments?.getString("feed_title").toString()   // TODO: Convert to Enum
         viewModel.getFeed(feedTitle)
+        Log.d(TAG, "onCreate: Oncreate called")
     }
 
     override fun onCreateView(

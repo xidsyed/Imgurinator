@@ -11,13 +11,15 @@
         android:layout_height="wrap_content"
         android:background="?android:windowBackground"
         android:fitsSystemWindows="true"
+        android:elevation="0dp"
         app:layout_constraintTop_toTopOf="parent">
 
         <Toolbar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways" >
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:elevation="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
