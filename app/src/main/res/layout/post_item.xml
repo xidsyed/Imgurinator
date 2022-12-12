@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/post_layout"
@@ -24,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            android:contentDescription="User Image Logo"
             tools:background="@drawable/sample_image_obito" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -41,7 +43,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/post_title_image_card"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Abandon Scum? Something is Worse than Something Else Even Though  You May Not think That it might be" />
+        tools:text="Abandon Scum? Something is Worse than Something Else Even Though  You May
+        Not think That it might be" />
 
     <TextView
         android:id="@+id/post_author_tv"
@@ -64,6 +67,7 @@
         android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:clipToOutline="true"
+        android:contentDescription="Content Image"
         android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@id/post_author_tv"
 
@@ -76,6 +80,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="Viewer Eye Icon"
         android:src="@drawable/ic_eye_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/post_image_view" />
@@ -109,6 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_up_arrow"
+        android:contentDescription="Upvote Arrow"
         app:layout_constraintEnd_toStartOf="@id/icon_share"
         app:layout_constraintTop_toTopOf="@id/eye_icon" />
 
@@ -118,6 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_share"
+        android:contentDescription="Share Icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/up_arrow" />
 

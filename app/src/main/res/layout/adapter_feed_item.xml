@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingVertical="16dp"
-    >
+>
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,7 +23,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/sample_image_obito" />
+        tools:src="@drawable/sample_image_obito"
+        />
 
     <TextView
         android:id="@+id/imageCaption"

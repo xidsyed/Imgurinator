@@ -19,6 +19,7 @@
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/ic_trending_arrow.xml" value="0.2675" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/image_border.xml" value="0.232" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/replies_pill_shape.xml" value="0.2715" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/selectable_item_background.xml" value="0.2905" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/upward_gradient.xml" value="0.259" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/drawable/upward_half_gradient.xml" value="0.2085" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto.xml" value="0.2599401453612655" />
@@ -26,7 +27,7 @@
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/font/roboto_medium.xml" value="0.26934587430525864" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout-v31/feed_list_item.xml" value="0.13802083333333334" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_post.xml" value="0.49098712446351933" />
+        <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_post.xml" value="0.264" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/activity_story.xml" value="0.264" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_comment_item.xml" value="0.4" />
         <entry key="..\:/Users/mmsye/AndroidStudioProjects/Imgurinator/app/src/main/res/layout/adapter_feed_item.xml" value="0.264" />
