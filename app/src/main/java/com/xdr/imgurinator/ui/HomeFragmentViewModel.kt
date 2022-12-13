@@ -1,4 +1,4 @@
-package com.xdr.imgurinator
+package com.xdr.imgurinator.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

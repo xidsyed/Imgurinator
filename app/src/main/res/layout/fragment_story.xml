@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/black"
-    tools:context=".ui.stories.StoryActivity">
+    tools:context=".ui.stories.StoryFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/story_pager"

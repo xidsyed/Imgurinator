@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Imgurinator">
         <activity
-            android:name=".ui.post.PostActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.stories.StoryActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

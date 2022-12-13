@@ -18,21 +18,21 @@
         android:id="@+id/action_global_postFragment"
         app:destination="@id/postFragment" />
 
-    <activity
-        android:id="@+id/storyActivity"
-        android:name="com.xdr.imgurinator.ui.stories.StoryActivity"
-        android:label="activity_story"
-        tools:layout="@layout/activity_story">
+    <fragment
+        android:id="@+id/storyFragment"
+        android:name="com.xdr.imgurinator.ui.stories.StoryFragment"
+        android:label="fragment_story"
+        tools:layout="@layout/fragment_story">
         <argument
             android:name="tag"
             app:argType="string" />
         <argument
             android:name="image_url"
             app:argType="string" />
-    </activity>
+    </fragment>
     <action
-        android:id="@+id/action_global_storyActivity"
-        app:destination="@id/storyActivity" />
+        android:id="@+id/action_global_storyFragment"
+        app:destination="@id/storyFragment" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.xdr.imgurinator.ui.HomeFragment"

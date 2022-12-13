@@ -14,9 +14,9 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.xdr.imgurinator.HomeFragmentViewModel
 import com.xdr.imgurinator.R
 import com.xdr.imgurinator.databinding.FragmentHomeBinding
+import com.xdr.imgurinator.ui.stories.StoriesRecyclerAdapter
 
 class HomeFragment : Fragment(), StoriesRecyclerAdapter.StoryClickListener {
     private var _binding : FragmentHomeBinding? = null
@@ -70,7 +70,7 @@ class HomeFragment : Fragment(), StoriesRecyclerAdapter.StoryClickListener {
             "tag" to tagName,
             "image_url" to imageUrl
         )
-        parentNavController.navigate(R.id.action_global_storyActivity, bundle)
+        parentNavController.navigate(R.id.action_global_storyFragment, bundle)
     }
 
     override fun onResume() {

@@ -1,4 +1,4 @@
-package com.xdr.imgurinator.ui
+package com.xdr.imgurinator.ui.stories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
