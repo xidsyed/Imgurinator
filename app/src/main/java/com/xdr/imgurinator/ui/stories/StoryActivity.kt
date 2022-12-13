@@ -1,18 +1,14 @@
 package com.xdr.imgurinator.ui.stories
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import androidx.viewpager.widget.PagerTitleStrip
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
-import com.xdr.imgurinator.R
 import com.xdr.imgurinator.databinding.ActivityStoryBinding
 
 class StoryActivity : AppCompatActivity(), PagerClickListener {
