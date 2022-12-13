@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav.xml"
+    app:startDestination="@id/homeFragment">
+    <include app:graph="@navigation/nav_home_feed" />
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.xdr.imgurinator.ui.post.PostFragment"
+        android:label="PostFragment">
+        <argument
+            android:name="album_hash"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_postFragment"
+        app:destination="@id/postFragment" />
+
+    <activity
+        android:id="@+id/storyActivity"
+        android:name="com.xdr.imgurinator.ui.stories.StoryActivity"
+        android:label="activity_story"
+        tools:layout="@layout/activity_story">
+        <argument
+            android:name="tag"
+            app:argType="string" />
+        <argument
+            android:name="image_url"
+            app:argType="string" />
+    </activity>
+    <action
+        android:id="@+id/action_global_storyActivity"
+        app:destination="@id/storyActivity" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.xdr.imgurinator.ui.HomeFragment"
+        android:label="HomeFragment" />
+
+</navigation>

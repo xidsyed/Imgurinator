@@ -2,4 +2,6 @@
     <string name="app_name">Imgurinator</string>
     <string name="nav_title_hot">Hot</string>
     <string name="nav_title_top">Top</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

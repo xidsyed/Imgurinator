@@ -1,4 +1,4 @@
-package com.xdr.imgurinator.ui.main
+package com.xdr.imgurinator.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

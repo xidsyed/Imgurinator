@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/nav_home_feed_graph"
     app:startDestination="@+id/navigation_hot">
 
     <fragment
@@ -28,15 +28,5 @@
             android:defaultValue="top"
             app:argType="string" />
     </fragment>
-    <activity
-        android:id="@+id/story_activity"
-        android:name="com.xdr.imgurinator.ui.stories.StoryActivity"
-        android:label="Stories"
-        tools:layout="@layout/activity_main">
 
-        <argument
-            android:name="tag"
-            app:argType="string" />
-
-    </activity>
 </navigation>

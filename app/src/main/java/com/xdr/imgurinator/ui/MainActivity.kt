@@ -1,4 +1,4 @@
-package com.xdr.imgurinator.ui.main
+package com.xdr.imgurinator.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,43 +11,42 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.xdr.imgurinator.R
 import com.xdr.imgurinator.databinding.ActivityMainBinding
-import com.xdr.imgurinator.ui.feed.FeedRecyclerAdapter
 import com.xdr.imgurinator.ui.stories.StoryActivity
 
-class MainActivity : AppCompatActivity(), StoriesRecyclerAdapter.StoryClickListener {
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val mainActivityViewModel: MainActivityViewModel by viewModels()
-    private val storiesRecyclerAdapter = StoriesRecyclerAdapter(this)
-    private var TAG = "MainActivity"
+//    private val mainActivityViewModel: MainActivityViewModel by viewModels()
+//    private val storiesRecyclerAdapter = StoriesRecyclerAdapter(this)
+//    private var TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+//
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setupNav()
-        binding.storyRecyclerView.apply {
-            layoutManager = LinearLayoutManager(
-                context,
-                RecyclerView.HORIZONTAL, false
-            )
-            adapter = storiesRecyclerAdapter
-        }
+//        setupNav()
+//        binding.storyRecyclerView.apply {
+//            layoutManager = LinearLayoutManager(
+//                context,
+//                RecyclerView.HORIZONTAL, false
+//            )
+//            adapter = storiesRecyclerAdapter
+//        }
     }
 
     private fun setupNav() {
-        val navView: BottomNavigationView = binding.navView
+//        val navView: BottomNavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+//        val navController = findNavController(R.id.nav_home_feed)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 //        val appBarConfiguration = AppBarConfiguration(setOf(
 //                R.id.navigation_hot, R.id.navigation_top))
 //        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+//        navView.setupWithNavController(navController)
     }
 
-    override fun onResume() {
+/*    override fun onResume() {
         super.onResume()
         mainActivityViewModel.getStories()
         mainActivityViewModel.tags.observe(this) {
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity(), StoriesRecyclerAdapter.StoryClickListe
         intent.putExtra("tag", tagName)
         intent.putExtra("image_url", imageUrl)
         startActivity(intent)
-    }
+    }*/
 
 
 }

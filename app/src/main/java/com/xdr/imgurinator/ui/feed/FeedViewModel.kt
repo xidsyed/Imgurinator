@@ -13,12 +13,11 @@ import kotlinx.coroutines.launch
 class FeedViewModel : ViewModel() {
     private val repo = ImgurRepository()
 
+    var feedTitle = "Hot"
     private val _feed = MutableLiveData<List<Image>>()
     val feed: LiveData<List<Image>> get() = _feed
-    private val TAG = "FeedViewModel"
 
     fun getFeed(type: String) {
-        Log.d(TAG, "getFeed: Called")
         viewModelScope.launch(Dispatchers.IO) {
             when (type) {
                 "hot" -> _feed.postValue(repo.getHotFeed())
