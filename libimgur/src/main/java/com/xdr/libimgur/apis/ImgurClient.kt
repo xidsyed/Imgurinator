@@ -16,7 +16,7 @@ object ImgurClient {
             .setLevel(HttpLoggingInterceptor.Level.BASIC)
     }
 
-    // Build okHttpClient instance
+    // Build okHttpClient instance to add auth headers
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .addInterceptor {
@@ -36,10 +36,9 @@ object ImgurClient {
             .addConverterFactory(MoshiConverterFactory.create())
             .addConverterFactory(EnumConverterFactory())
             .baseUrl("https://api.imgur.com/3/")
-            .build();
+            .build()
     }
 
     // create an implementation of API Endpoints
     val imgurService: ImgurService by lazy { retrofitInstance.create(ImgurService::class.java) }
-
 }

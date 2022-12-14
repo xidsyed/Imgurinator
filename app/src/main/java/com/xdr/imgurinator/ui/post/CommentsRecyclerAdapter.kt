@@ -1,9 +1,6 @@
 package com.xdr.imgurinator.ui.post
 
-import android.opengl.Visibility
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
@@ -16,7 +13,6 @@ import com.xdr.libimgur.models.Comment
 
 class CommentsRecyclerAdapter :
     ListAdapter<Comment, CommentsRecyclerAdapter.CommentViewHolder>(CommentItemCallback()) {
-    private val TAG = "CommentsRecyclerAdapter"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentViewHolder {
         val inflater = LayoutInflater.from(parent.context)

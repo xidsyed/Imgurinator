@@ -1,29 +1,53 @@
 package com.xdr.imgurinator.ui.post
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.xdr.imgurinator.repository.ImgurRepository
+import com.xdr.imgurinator.util.State
 import com.xdr.libimgur.models.Comment
 import com.xdr.libimgur.models.Image
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 class PostViewModel : ViewModel() {
     private val repo = ImgurRepository()
 
-    private val _comments = MutableLiveData<List<Comment>>()
-    val comments: LiveData<List<Comment>> get() = _comments
+    val comments = MutableStateFlow<State<List<Comment>>>(State.Fetching)
+    val post = MutableStateFlow<State<Image>>(State.Fetching)
+    private lateinit var albumHash : String
 
-    private val _post = MutableLiveData<Image>()
-    val post : LiveData<Image> get() = _post
-
-    fun getComments(albumHash: String) = viewModelScope.launch {
-        repo.getComments(albumHash)?.let { _comments.postValue(it) }
+    fun setAlbumHash(hash :String) {
+        albumHash = hash
+        refresh()
     }
 
-    fun getPost(albumHash: String) = viewModelScope.launch{
-        repo.getGalleryImage(albumHash)?.let { _post.postValue(it)}
+    fun refresh () {
+        getComments()
+        getPost()
+    }
+
+    private fun getComments() = viewModelScope.launch {
+        comments.emit(
+            try {
+                val comments = repo.getComments(albumHash)
+                if (comments == null) State.Error("An Unknown Error has Occurred", null)
+                else State.Fetched(comments)
+            } catch (e: Exception) {
+                State.Error(e.message, e)
+            }
+        )
+    }
+
+    private fun getPost() = viewModelScope.launch {
+        post.emit(
+            try {
+                val image = repo.getGalleryImage(albumHash)
+                if (image == null) State.Error("An Unknown Error has Occurred", null)
+                else State.Fetched(image)
+            } catch (e: Exception) {
+                State.Error(e.message, e)
+            }
+        )
     }
 
 }
