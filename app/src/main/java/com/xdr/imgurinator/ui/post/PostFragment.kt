@@ -49,7 +49,14 @@ class PostFragment : Fragment() {
     private fun initPostView() {
         binding.postItemsRecyclerView.apply {
             adapter = postItemRecyclerAdapter
-            layoutManager = LinearLayoutManager(context)
+            // need this to avoid glitchy scroll. :)
+            layoutManager = object : LinearLayoutManager(context) {
+                override fun canScrollVertically(): Boolean {
+                    return false
+                }
+            }
+            // this is the second option but it disables recycling of views.
+            // isNestedScrollingEnabled = false
         }
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -64,7 +71,12 @@ class PostFragment : Fragment() {
     private fun initCommentRecyclerView() {
         binding.commentsRecyclerView.apply {
             adapter = commentsRecyclerAdapter
-            layoutManager = LinearLayoutManager(context)
+            // need this to avoid glitchy scroll. :)
+            layoutManager = object : LinearLayoutManager(context) {
+                override fun canScrollVertically(): Boolean {
+                    return false
+                }
+            }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {

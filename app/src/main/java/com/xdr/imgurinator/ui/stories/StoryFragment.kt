@@ -4,9 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
@@ -43,7 +40,6 @@ class StoryFragment : Fragment(), PagerClickListener {
 
     override fun onResume() {
         super.onResume()
-        hideSystemUi()
         storyViewModel.storiesList.observe(this) {
             storyPagerAdapter.submitList(it)
         }
@@ -52,6 +48,7 @@ class StoryFragment : Fragment(), PagerClickListener {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+
     }
 
     override fun toggleOverlay() {
@@ -79,16 +76,4 @@ class StoryFragment : Fragment(), PagerClickListener {
             }
         })
     }
-
-    private fun hideSystemUi() {
-        val window = requireActivity().window
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-        WindowInsetsControllerCompat(window, binding.storyPager).let { controller ->
-            controller.hide(WindowInsetsCompat.Type.systemBars())
-            controller.systemBarsBehavior =
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        }
-    }
-
-
 }
