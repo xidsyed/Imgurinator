@@ -11,6 +11,7 @@ This Android app demonstrates a custom media pager using ExoPlayer for scroll-ba
 - **Flows**: Kotlin Flows to read manage and update state.
 
 ## Screenshots
+![imgurinator_demo_reel (1)](https://github.com/xidsyed/Imgurinator/assets/26184016/26170300-b9a8-495a-912d-ce2387d18d4d)
 
 
 
